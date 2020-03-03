@@ -1,0 +1,39 @@
+@model User
+<div class="row">
+    <div class="col-sm-6" style="padding-right: 6rem;">
+        <h3>Register Here!</h3>
+        <form asp-action="reg" asp-controller="Home" method="post">
+        <div class="form-group">
+            <span asp-validation-for="FirstName"></span>
+            <label asp-for="FirstName"></label>
+            <input class="form-control" placeholder="Jon" asp-for="FirstName"/>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="LastName"></span>
+            <label asp-for="LastName">Last Name:</label>
+            <input class="form-control" placeholder="Doe" asp-for="LastName"/>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Username"></span>
+            <label asp-for="Username">Username:</label>
+            <input class="form-control" placeholder="ExampleUsername" asp-for="Username"/>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Email"></span>
+            <label asp-for="Email">Email:</label>
+            <input class="form-control" placeholder="example@examp.com" asp-for="Email"/>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Password"></span>
+            <label asp-for="Password"></label>
+            <input class="form-control" placeholder="password" asp-for="Password"/>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="CPassword"></span>
+            <label asp-for="CPassword"></label>
+            <input class="form-control" placeholder="password" asp-for="CPassword"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+</div>

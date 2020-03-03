@@ -1,0 +1,16 @@
+@model Hobby
+<a asp-action="logout" asp-controller="Home">LOGOUT</a>
+<a asp-controller="Hobby" asp-action="Dashboard" class="btn btn-info">Back</a>
+<div class="container" style="padding-top: 5rem; margin: 0 auto;">
+    <form asp-action="AddNewHobby" asp-controller="Hobby" method="post">
+        <div class="form-group">
+            <span asp-validation-for="HobbyType"></span>
+            <input asp-for="HobbyType" placeholder="Enter Hobby Type:">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Description"></span>
+            <input asp-for="Description" placeholder="Enter Description:">
+        </div>
+        <button type="submit">Create</button>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+@model Hobby
+
+<a asp-controller="Hobby" asp-action="Dashboard" class="btn btn-info">Back</a>
+<div class="card mx-auto text-center mb-3" style="width: 25rem;">
+  <div class="card-header">
+    <h5 class="card-title">
+      @Model.HobbyType
+    </h5>
+  </div>
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Description: </h6>
+    <p>
+      @Model.Description
+    </p>
+  </div>
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">Enthusiasts: </h6>
+    @{var ent = false;}
+      @foreach(var enthusiast in @Model.Enthusiasts){
+        @if(enthusiast.user.UserId==@ViewBag.Uid){
+          ent = true;
+          <p>
+          @enthusiast.user.FullName()
+          </p>
+        }else{
+          <p>
+          @enthusiast.user.FullName()
+          </p>
+        }
+      }
+
+  </div>
+  <div class="card-footer">
+    <h5>Become an Enthusiast!</h5>
+    @if(!ent){
+      <a asp-action="addedtopersonalhobbies" asp-controller="Hobby" asp-route-hobbyId="@Model.HobbyId">Add to Hobbies</a>
+    }
+  </div>
+</div>
